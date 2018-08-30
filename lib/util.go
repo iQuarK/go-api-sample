@@ -12,8 +12,8 @@ func ContainsPerson(haystack []Person, needle Person) bool {
 	return false
 }
 
-// ContainsInt returns true if an Integer belongs to an array
-func ContainsInt(haystack []int32, needle int32) bool {
+// ContainsNumber returns true if an Integer belongs to an array
+func ContainsNumber(haystack []uint, needle uint) bool {
 	for _, item := range haystack {
 		if item == needle {
 			return true

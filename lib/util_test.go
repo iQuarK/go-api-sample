@@ -36,25 +36,25 @@ func TestContainsPerson(t *testing.T) {
 		}
 	}
 }
-func TestContainsInt(t *testing.T) {
+func TestContainsNumber(t *testing.T) {
 	t.Log("It should be true if a number is inside the array")
 
-	array := []int32{1, 2, 3, 4, 5, 6}
+	array := []uint{1, 2, 3, 4, 5, 6}
 
 	var fibTests = []struct {
-		n        int32 // input
-		expected bool  // expected result
+		n        uint // input
+		expected bool // expected result
 	}{
 		{3, true},
 		{7, false},
 		{0, false},
-		{-1, false},
+		{1234, false},
 	}
 
 	for _, tt := range fibTests {
-		actual := lib.ContainsInt(array, tt.n)
+		actual := lib.ContainsNumber(array, tt.n)
 		if actual != tt.expected {
-			t.Errorf("ContainsInt(array, %d): expected %t, actual %t", tt.n, tt.expected, actual)
+			t.Errorf("ContainsNumber(array, %d): expected %t, actual %t", tt.n, tt.expected, actual)
 		}
 	}
 }
